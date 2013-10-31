@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Urban Sprawl, a gaming project</title>
+    <link rel="stylesheet" href="fonts.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+<center>
+    <!--//GAME WINDOW-->
+    <div id="canvasDiv"></div>
+	
+	<!-- LOADING ALL THE SOUND WE NEED -->
+	<audio id="BuildFacM" src="sounds/SFX/FactoryBuild.mp3" preload="auto" autobuffer ></audio>
+	<audio id="BuildFac" src="sounds/SFX/FactoryBuild.ogg" preload="auto" autobuffer ></audio>
+	<audio id="BuildEntM" src="sounds/SFX/EntertainmentBuild.mp3" preload="auto" autobuffer></audio>
+	<audio id="BuildEnt" src="sounds/SFX/EntertainmentBuild.ogg" preload="auto" autobuffer></audio>
+	<audio id="BuildHosM" src="sounds/SFX/HospitalBuild.mp3" preload="auto" autobuffer></audio>
+	<audio id="BuildHos" src="sounds/SFX/HospitalBuild.ogg" preload="auto" autobuffer></audio>
+	<audio id="BuildMarM" src="sounds/SFX/MarketBuild.mp3" preload="auto" autobuffer></audio>
+	<audio id="BuildMar" src="sounds/SFX/MarketBuild.ogg" preload="auto" autobuffer></audio>
+	<audio id="LaunchM" src="sounds/SFX/LaunchNoise2.mp3" preload="auto" autobuffer></audio>
+	<audio id="Launch" src="sounds/SFX/LaunchNoise2.ogg" preload="auto" autobuffer></audio>
+	<audio id="BuildTcM" src="sounds/SFX/TownCenterBuild.mp3" preload="auto" autobuffer></audio>
+	<audio id="BuildTc" src="sounds/SFX/TownCenterBuild.ogg" preload="auto" autobuffer></audio>
+	<audio id="MusicM" src="sounds/Serene Scene Final.mp3" preload="auto" autobuffer loop="loop"></audio>
+	<audio id="Music" src="sounds/Serene_Scene_Final.ogg" preload="auto" autobuffer loop="loop"></audio>
+	<audio id="BankruptM" src="sounds/SFX/Bankrupt.mp3" preload="auto" autobuffer></audio>
+	<audio id="Bankrupt" src="sounds/SFX/Bankrupt.ogg" preload="auto" autobuffer></audio>
+	<audio id="PopCapM" src="sounds/SFX/PopCap.mp3" preload="auto" autobuffer></audio>
+	<audio id="PopCap" src="sounds/SFX/PopCap.ogg" preload="auto" autobuffer></audio>
+
+	
+
+
+<!-- LOAD ALL SCRIPT FILES WE NEED -->
+ 	<!-- modernizr is a library that has functions that check if a browser can run specific functions, since every browser is not the same -->
+	<script type="text/javascript" src="modernizr.custom.05919.js"></script>
+	<script type="text/javascript" src="nikframework.js"></script>   
+	<script type="text/javascript" src="quicktools.js"></script>
+	
+	<script type="text/javascript" src="map.js"></script>
+	<script type="text/javascript" src="gridspot.js"></script>
+	<script type="text/javascript" src="MiniMap.js"></script>
+	<script type="text/javascript" src="Buildings.js"></script>
+	<script type="text/javascript" src="GamePlay.js"></script>
+    <script type="text/javascript" src="ludumdare24.js"></script>    
+    
+    <script type="text/javascript">
+		function f(e){
+			console.log(e.x+ " "+e.y);
+		}
+	
+    	 prepareCanvas(document.getElementById("canvasDiv"), 800, 600);
+         
+         window.addEventListener('keydown',keyPressed,true);
+		 window.addEventListener('keyup',keyReleased,true);
+		 
+		 window.addEventListener("mousemove",onMouseMove,true);
+		 
+         <!-- window.addEventListener('keyup',doKeyUp,true); -->
+    </script>
+<img src="images/urbansprawllogo.png" alt="Urban Sprawl"/>
+<p>wasd/arrow keys: move&nbsp;&nbsp;&nbsp;&nbsp;m: mute&nbsp;&nbsp;&nbsp;&nbsp;r: restart game&nbsp;&nbsp;&nbsp;&nbsp;f: toggle fastforward<br>
+<a href="http://thegamingproject.org/" target="_blank">a gaming project</a>, made in 72 hours for <a href="http://www.ludumdare.com/compo/ludum-dare-24/" target="_blank">Ludum Dare 24</a>
+</p>
+</center>
+  </body>
+</html>

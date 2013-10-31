@@ -1,0 +1,33 @@
+body{
+    background-image:url('images/pageBkgrnd.png');
+    background-position:top center;
+    background-color:#cccccc;
+    overflow:hidden;
+}
+
+p {
+    font-family: "Conv_alterebro-pixel-font","Helvetica Neue";
+    font-size: 18pt;
+    color: #999;
+}
+
+a {
+    color: #3fa9f5;
+    text-decoration: none;
+}
+
+img {
+    margin-bottom:-10px;
+}
+
+table {
+    border-width: 0px;
+    margin: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td.right {
+    padding: 3px;
+    text-align: right;
+}
