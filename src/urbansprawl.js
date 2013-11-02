@@ -7,7 +7,7 @@ var GAME = {};
 
 GAME.fps = 30;
 GAME.state = STATES.pregame;
-
+GAME.gameplayObject;
 
 GAME.controls = {
     //for moving map
@@ -31,7 +31,7 @@ GAME.init = function(canvas){
 
     //load shit?
 
-
+	GAME.gameplayObject = new GamePlay();
 
 
     setInterval(GAME.update, 1000 / GAME.fps);
@@ -51,9 +51,9 @@ GAME.update = function(){
             //update controls
 
             //update game-logic
-                //gameplayobj.update()
+                gameplayObject.update()
             //draw graphics
-                //gameplayobj.draw()
+                gameplayObject.draw()
             break;
     }
 
@@ -134,8 +134,17 @@ function drawStuff(stage){
     circle.x = circle.y = 50;
     //Add Shape instance to stage display list.
     stage.addChild(circle);
-
-
+	
+	var container = new createjs.Container();
+	container.x = 20;
+	container.y = 20;
+	stage.addChild(container);
+	
+	circle = new createjs.Shape();
+	circle.graphics.beginFill("black").drawCircle(2,2,10);
+	container.addChild(circle);
+	
+	
     circle = new createjs.Shape();
     circle.graphics.beginFill("blue").drawCircle(0, 0, 25);
 
