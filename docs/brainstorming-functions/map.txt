@@ -1,0 +1,52 @@
+consts:
+
+
+
+vars:
+
+terrainGrid
+
+buildingGrid - array[x][y] of buildings
+  - multiple spots will link to the same building
+
+buildingCount - array[id] 
+
+funcs:
+
+generate()
+  -creates a container
+  -generates the terrain, sets the images to the gridspots 
+
+update()
+  -? does this do anything?
+
+getSpotWorth()
+  - returns how much a spot is 'worth'
+ 
+checkSpot({x,y,width,height,unpassableTerrain})
+  - checks if an area does not have any buildings or terrain
+  - by default, unpassableTerrain={mountain,volcanom,water,hills}
+  
+boolean buildHere({x,y,buildingID})
+  - will return false if x,y,width,height would be off the screen
+  - assumes you checked the spot, otherwise force builds
+  - creates the building object and assigns it to buildingGrid
+  - updates buildingCounts
+  
+clickMinimap()
+  
+moveViewport()
+  -moves minimap viewport too
+  
+processBuildingTurns()
+  - called by gameplay.doTurn
+  - returns the amount of income (from tax)
+  - loops thru the buildings building.processTurn({gridspot})
+  
+processUpkeep()
+  - called by gameplay.doUpkeep
+  - returns the amount of upkeep (from buildings)
+  - loops thru the buildings building.processUpkeep({gridspot})
+  
+  
+  

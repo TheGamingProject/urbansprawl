@@ -1,0 +1,49 @@
+GRIDSPOT
+
+const:
+
+
+
+vars:
+ -terraintype
+ -modifiers 
+  -{entertained:true,polluted:false}
+
+
+funcs:
+
+
+
+
+
+
+
+
+
+------------------
+BUILDINGS
+
+const:
+
+
+
+vars:
+
+-turnCallback
+-upkeepCallback
+-buildingImage
+
+funcs:
+
+processTurn({gridspot})
+  -? call turnCallback?
+  - returns income based on gridspot
+  -? what if you wanted to base income on adjacent stuff?
+  
+processUpkeep({gridspot})
+  - call upkeepCallback
+  - return upkeep cost
+
+
+
+

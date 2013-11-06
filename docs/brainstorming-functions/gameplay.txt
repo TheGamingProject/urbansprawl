@@ -15,10 +15,13 @@ funcs:
    
 onMouseClick({x,y,btn})
    - delgate to fieldClick or call one of the buttons callbacks
+   - calls map.clickMinimap()
    
 onMouseRelease({x,y,btn})
    - delgate to fieldRelease or call one of the buttons callbacks
 
+onMouseMove()
+   
 fieldRelease()
 
 fieldClick()
@@ -34,6 +37,7 @@ keyReleased("keyname")
 
 update()
    - runs gameplay loop, mostly controlling the clock and turn cycles
+   - calls doTurn() every time its time
 
 init()
   - generate the Map
@@ -67,9 +71,13 @@ boolean tryBuild((x,y,width,height, buildingID})
 buildBuilding({x,y,width, height, buildingID})
   - updates the map
   - assumes you called map.checkSpot() aka tryBuild, otherwise this will force sets spots, (over rides other buildings?)
+  - calls map.buildHere({x,y,buildingID})
 
-
-
+doTurn()
+  -give income(tax)
+  -every 10 turns, call doUpkeep()
+  
+doUpkeep()
 
 
 
