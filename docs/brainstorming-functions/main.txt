@@ -17,7 +17,8 @@ funcs:
 
 
 update()
-   - main loop of the program, will have switch statement that will decide what is shown on screen( will run another update() ). Also will delegate input to the current State object ( onMouseClick, onMouseRelease, keyPressed, keyRelease)
+   - main loop of the program, changes updates depending on current State
+   - will have switch statement that will decide what is shown on screen( will run another update() ). Also will delegate input to the current State screen object ( onMouseClick, onMouseRelease, keyPressed, keyRelease)
    
 keyReleased()(), keyPressed(), onMouseClick(), onMouseRelease()
   - all will delegate

@@ -1,0 +1,3 @@
+button = {x,y,width,height, clickCallback, releaseCallback}
+
+screen = (update, onMouseClick, onMouseRelease, keyPressed, keyRelease)

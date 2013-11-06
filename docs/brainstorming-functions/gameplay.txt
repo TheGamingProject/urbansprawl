@@ -1,3 +1,6 @@
+consts:
+
+enum {preGame,mainState,placingBuilding,endGame}
 
 vars:
 
@@ -8,8 +11,7 @@ buttons - an array of buttons ie {x,y,width,height, clickCallback, releaseCallba
 
 funcs:
 
-update()
-   - runs gameplay loop, mostly controlling the clock and turn cycles
+//input functions
    
 onMouseClick({x,y,btn})
    - delgate to fieldClick or call one of the buttons callbacks
@@ -26,3 +28,48 @@ keyPressed("keyname")
 
 keyReleased("keyname")
    - main.js will translate keyname strings that will enter a case statement
+   
+
+//important functions
+
+update()
+   - runs gameplay loop, mostly controlling the clock and turn cycles
+
+init()
+  - generate the Map
+  - changeState({STATE.mainState})
+
+changeState({stateID,enabled,args})
+  - state change code goes here
+  - state changes
+    - preGame
+      - whatevers happening before you place your first building?
+    - mainState
+      - main state the game is while its on
+    - placingbuilding
+      - args.buildingID
+      - args.layerID 
+        - an enum,  to trigger a layer indicator to be shown (entertainment, polluted, marketed) during the selection
+        - could be null
+      - args.doesLayerPreventsBuilding
+        - a boolean, if this is true, building is prevent in layerID
+        - can be null
+        - this paramerter is meaningless if layerID is null
+    - endGame
+  -? should this be more functional?
+
+selectBuild({buildingID})
+  - triggers changeState('placingbuilding')
+
+boolean tryBuild((x,y,width,height, buildingID})
+  - returns if that 
+
+buildBuilding({x,y,width, height, buildingID})
+  - updates the map
+  - assumes you called map.checkSpot() aka tryBuild, otherwise this will force sets spots, (over rides other buildings?)
+
+
+
+
+
+
