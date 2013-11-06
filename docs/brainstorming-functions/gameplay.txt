@@ -1,0 +1,28 @@
+
+vars:
+
+buttons - an array of buttons ie {x,y,width,height, clickCallback, releaseCallback}
+
+
+
+
+funcs:
+
+update()
+   - runs gameplay loop, mostly controlling the clock and turn cycles
+   
+onMouseClick({x,y,btn})
+   - delgate to fieldClick or call one of the buttons callbacks
+   
+onMouseRelease({x,y,btn})
+   - delgate to fieldRelease or call one of the buttons callbacks
+
+fieldRelease()
+
+fieldClick()
+
+keyPressed("keyname") 
+   - main.js will translate keyname strings that will enter a case statement
+
+keyReleased("keyname")
+   - main.js will translate keyname strings that will enter a case statement
