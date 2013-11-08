@@ -1,1 +1,3 @@
 use prototypes better
+
+-research mouseMove functions in easeljs

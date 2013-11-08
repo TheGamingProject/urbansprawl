@@ -1,13 +1,11 @@
 consts:
 
-TOTALX, TOTALY
+TOTALX, TOTALY, FPS
 
 STATES - menu, ingame
 
 
 vars:
-
-fps
 
 menuscreen 
 gameplayscreen
@@ -23,3 +21,7 @@ update()
 keyReleased()(), keyPressed(), onMouseClick(), onMouseRelease()
   - all will delegate
   - keyReleased/Pressed will trigger a global game event (reset, mute)or else, translate to key action name 
+  
+loadshit?()
+
+resetGame()

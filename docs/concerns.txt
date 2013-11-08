@@ -1,1 +1,2 @@
 -where does building terrain requirements live
+-when are mystery points assigned and operated on?

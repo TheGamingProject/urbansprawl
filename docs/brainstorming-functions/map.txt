@@ -3,17 +3,27 @@ consts:
 
 
 vars:
+  minimapBounds
+  fieldBounds  // playfield
+  
+  terrainGrid
+  buildingGrid - array[x][y] of buildings
+    - multiple spots will link to the same building
 
-terrainGrid
+  buildingCount - array[id] 
 
-buildingGrid - array[x][y] of buildings
-  - multiple spots will link to the same building
-
-buildingCount - array[id] 
 
 funcs:
 
-generate()
+init({minimapBounds,fieldBounds,drawfirst})
+  -inits easel containers for minimap and field
+  -calls generateTerrain()
+  -calls initMinimap()
+  
+initMinimap()
+  -inits minimap based off terrain map
+
+generateTerrain()
   -creates a container
   -generates the terrain, sets the images to the gridspots 
 
@@ -23,9 +33,9 @@ update()
 getSpotWorth()
   - returns how much a spot is 'worth'
  
-checkSpot({x,y,width,height,unpassableTerrain})
+checkSpot({x,y,width,height,unbuildableTerrain})
   - checks if an area does not have any buildings or terrain
-  - by default, unpassableTerrain={mountain,volcanom,water,hills}
+  - by default, unbuildableTerrain={mountain,volcanom,water,hills}
   
 boolean buildHere({x,y,buildingID})
   - will return false if x,y,width,height would be off the screen
@@ -47,6 +57,8 @@ processUpkeep()
   - called by gameplay.doUpkeep
   - returns the amount of upkeep (from buildings)
   - loops thru the buildings building.processUpkeep({gridspot})
+  
+spawnNewHouse()
   
   
   

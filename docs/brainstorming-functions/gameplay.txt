@@ -1,13 +1,31 @@
 consts:
+  poimt MAP_BOUNDS
+  point MINIMAP_BOUNDS
 
-enum {preGame,mainState,placingBuilding,endGame}
+
+  enum {preGame,mainState,placingBuilding,endGame}
 
 vars:
+  state
+  buttons - an array of buttons ie {x,y,width,height, clickCallback, releaseCallback}
 
-buttons - an array of buttons ie {x,y,width,height, clickCallback, releaseCallback}
-
-
-
+  cash
+  income // or lastUpkeep its only used for the display object?
+  upkeep //maybe not, or lastUpkeep
+  
+  turnNumber
+  population
+  houseTotals[terrainType]
+  
+  spawningAmount
+  
+  selectedTerrain //for side display
+  
+  boolean fastforward
+  
+  //DisplayObjects
+  buttonBitmaps[] 
+  incomeDisplay
 
 funcs:
 
@@ -40,7 +58,7 @@ update()
    - calls doTurn() every time its time
 
 init()
-  - generate the Map
+  - Map.init({MAP_BOUNDS,MINIMAPBOUNDS,drawfirst:"map"})
   - changeState({STATE.mainState})
 
 changeState({stateID,enabled,args})
@@ -59,6 +77,8 @@ changeState({stateID,enabled,args})
         - a boolean, if this is true, building is prevent in layerID
         - can be null
         - this paramerter is meaningless if layerID is null
+      - args.doesBuildingRequireLayer
+      - args.additionalRequirementsCallback()
     - endGame
   -? should this be more functional?
 
@@ -79,5 +99,15 @@ doTurn()
   
 doUpkeep()
 
+getMysteryHousePick(amt)
+  -update mysterypoints(based on attributes and terrains)
+  -validate valid spots, ones next to a house, hospital or town center
+ 
+getRent(spot)
+
+getUpkeep(spot)
+
+addCash(amt)
+  -should this be a closure type thing so nothing else touches cash
 
 
