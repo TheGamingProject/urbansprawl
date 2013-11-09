@@ -44,6 +44,8 @@ boolean buildHere({x,y,buildingID})
   - updates buildingCounts
   
 clickMinimap()
+  - calls moveViewport based off where you click
+  - does the original implementation involve mouseMove() ?
   
 moveViewport()
   -moves minimap viewport too
@@ -59,6 +61,6 @@ processUpkeep()
   - loops thru the buildings building.processUpkeep({gridspot})
   
 spawnNewHouse()
-  
+  -
   
   

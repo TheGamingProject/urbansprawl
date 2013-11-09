@@ -1,5 +1,5 @@
 consts:
-  poimt MAP_BOUNDS
+  point MAP_BOUNDS
   point MINIMAP_BOUNDS
 
 
@@ -36,14 +36,14 @@ onMouseClick({x,y,btn})
    - calls map.clickMinimap()
    
 onMouseRelease({x,y,btn})
-   - delgate to fieldRelease or call one of the buttons callbacks
+   - delegate to fieldRelease or call one of the buttons callbacks
 
 onMouseMove()
    
 fieldRelease()
-
+  
 fieldClick()
-
+  
 keyPressed("keyname") 
    - main.js will translate keyname strings that will enter a case statement
 
@@ -98,15 +98,17 @@ doTurn()
   -every 10 turns, call doUpkeep()
   
 doUpkeep()
-
+  -subtract getUpkeep() from cash
+  - check if its below the lose threshold?  
+    - game over if it is
 getMysteryHousePick(amt)
   -update mysterypoints(based on attributes and terrains)
   -validate valid spots, ones next to a house, hospital or town center
  
 getRent(spot)
-
+  - loops through all the buildings and calls their processTurn(), which returns the rent
 getUpkeep(spot)
-
+  - loops through all the buildings and calls their getUpkeep(), which returns the upkeep
 addCash(amt)
   -should this be a closure type thing so nothing else touches cash
 

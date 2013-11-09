@@ -6,9 +6,8 @@ STATES - menu, ingame
 
 
 vars:
-
-menuscreen 
-gameplayscreen
+  menuscreen 
+  gameplayscreen
 
 
 funcs:
@@ -25,3 +24,4 @@ keyReleased()(), keyPressed(), onMouseClick(), onMouseRelease()
 loadshit?()
 
 resetGame()
+  - deletes gameplayscreen, and makes a new one (affectively making a new map)
